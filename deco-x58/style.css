@@ -1,0 +1,339 @@
+          @media only screen and (max-width: 480px){
+
+       .center {
+           width: 80%!important;
+    height: auto!important;
+          }
+          }
+          
+          
+          .headline{
+	font-size:25px;
+	text-align: center;
+	padding: 20px;
+	position: static;
+	margin: auto;
+}
+      .headline p{
+	font-size:15px;
+	text-align: center;
+	padding-top:10px;
+	position: static;
+	margin: auto;
+}
+.picture
+{ width:780px;
+position:relative;
+ height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+  transition-property: transform,-webkit-transform;
+    margin-bottom:30px;
+  }
+
+body {
+background-color: #ebebeb;
+}	
+
+.center {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 40%;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 25%);
+}
+	
+.pointer {
+    background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer2{
+    background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+.pointer3{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+
+.pointer4{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+.pointer5{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+
+.pointer9{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer10{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+.pointer11{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer12{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer13{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer14{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+.pointer15{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+.pointer8{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+
+.pointer6{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+
+
+.pointer7{
+  background-image: url('https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/4e/c147e0b84912841f279406e80601/pointer.png');
+    background-size: auto 60px;
+    width: 60px;
+    height: 60px;
+	position: absolute;
+ margin-top: -29px;
+margin-left: -29px;
+	animation-duration: 0.8s;
+    animation-timing-function: steps(11);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+	animation-name:animation_pointer;
+    
+}
+@keyframes animation_pointer {
+0% {
+    background-position: 0;
+}
+100% {
+    background-position: -660px;
+}
+
+    
