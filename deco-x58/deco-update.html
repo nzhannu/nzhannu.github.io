@@ -1,0 +1,91 @@
+
+      <!DOCTYPE html>
+<html lang="en-NZ">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="version:build" content="0.0.12">
+    <meta version="undefined" content="build:version">
+	<style>
+	          @media only screen and (max-width: 480px){
+	
+.picture{
+	width:380px !important;
+	}
+              
+              .pointer {
+			 
+                  top: 615px !important;
+    left: 193px!important;
+                      width: 60px!important;
+    height: 60px!important;
+}
+.pointer2 {
+	top: 45px!important;
+    left: 68px!important;
+	      width: 60px!important;
+    height: 60px!important;
+	}
+     .pointer3 {
+	    top: 235px!important;
+    left: 130px!important;
+ width: 60px!important;
+    height: 60px!important;
+	} 
+}
+
+.pointer {
+	top: 625px;
+    left: 385px;
+	}
+	
+.pointer2 {
+	top: 45px;
+    left: 260px;
+	}
+	.pointer3 {
+	top: 235px;
+    left: 320px;
+	}
+
+	
+#loading.hidden{
+  opacity: 0;
+  visibility: hidden;
+  height:0;
+  margin-top:0px;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height:0;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+setTimeout(function() {
+  $('#loading').addClass('hidden');
+   $('#main').removeClass('hidden');
+}, 3000);
+
+
+</script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+   <body>
+   
+    <div class="headline">X58-4G Deco App Emulator<p> Click or Tap on the red circle below to continue</p><p><a href="index.html"> Click here to go to home screen</a></p> </div>
+	
+<div class="picture" id="loading"><img class="center" src="img/deco-update2.jpg"></div>
+	<div class="picture hidden" id="main"><img class="center" src="img/deco-update.jpg">
+	
+
+	<a href="deco-system.html"><div class="picture pointer2">
+	</div></a>
+
+	</div>
+	</body>
+	</html>
