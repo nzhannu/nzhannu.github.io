@@ -1,0 +1,47 @@
+<html>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<head>
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<h1> Text Replace Tool</h1>
+ <ol><li>Get CSS file and add it under Original text.</li><li>Upload images in Brightspot CMS QA as attachment and export the URLs of the files along with name.</li><li>Arrange data in Excel by removing unneccsary values and formatting values to get URL of the image and add it under item to replace .</li><li>Get list of files and Add../images/ and replace - with _ in source in excel and add it in Items to find. </li><li> <b>Example </b>  <u>items to find </u> "../images/video_hyper_stable_small_2x.png" and <u> items to replace </u> "https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/80/b59939814eb7afc960ad60ed1cfe/icon-sos-large-2x.png" </li></ol>
+
+<p>
+	Original text:<br />
+	<textarea id="original" rows="4" cols="50"></textarea>
+</p>
+
+
+
+<p>
+	Items to find:<br />
+<textarea id="find" rows="4" cols="50">item1
+item2
+item3</textarea>
+</p>
+
+<p>
+	Items to replace:<br />
+<textarea id="replace" rows="4" cols="50">replace1
+replace2
+replace3</textarea>
+</p>
+
+<p class="config">
+	<b>Configuration:</b><br><br />
+	- Items separated by <input id="separatedBy" type="text" value="\n" size="3" /> (Regex)<br />
+	- <input id="useRegex" type="checkbox"/> Use Regex in each item<br>
+	- <input id="caseSensitive" type="checkbox" checked/> Use case sensitive
+</p>
+
+<p>
+<input type="button" value="Replace" onclick="replace()" />
+</p>
+
+<p>
+	Result:<br>
+	<textarea id="result"  rows="4" cols="50"></textarea>
+</p>
+
+</html>
