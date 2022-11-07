@@ -1,0 +1,36 @@
+*{
+	font-family: Sans-Serif;
+	box-sizing: border-box;
+}
+
+body{
+	padding:1em 10%;
+}
+
+textarea,input[type='text']{
+	font-family: monospace;
+}
+
+textarea{
+	border-radius: 5px;
+	width: 100%;
+	padding:1em;
+}
+
+.config{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #888888;
+	padding: 1em;
+	display: inline-block;
+	color: #888888;
+}
+
+
+ol
+
+{
+font-size : 22px;}
+
+li
+{margin:10px;}
