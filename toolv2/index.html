@@ -1,0 +1,299 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="script-copy.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+	
+<div class="user-input with-padding">
+    <div style="display:none;">
+        <label for="txtReplaceWhat">Search for:</label>
+        <input id="txtReplaceWhat"  type="text" value="-" />
+        <br />
+        <label for="txtReplaceWith">Replace with:</label>
+        <input id="txtReplaceWith" type="text" value="_" /></input>
+    </div>
+    <div style="float:center;">
+     
+    </div>
+  
+    <br style="clear:both" />
+</div>
+<div class="with-padding">
+<div style="width:600px; float:left;">
+    <h1>Input Text:</h1><br />    
+    <textarea id="txtReplaceText" class="replace" rows="1" ></textarea>
+
+</div>
+
+  <div class="field2"><h1>Result:</h1>
+    <textarea class="editor" contenteditable="true" id="prefix-suffix-lines-text"></textarea>
+  </div>
+  </div>
+
+
+  <div class="field">
+    <div id="action-error"></div>
+  </div>
+  <div class="field" id="prefix-suffix-lines-field">
+    <div style="display:none;">
+      Prefix string: <input type="text" name="prefix" value="../images/">
+    <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+  </div>
+  <div class="field" id="prefix-suffix-lines-field">
+    <div style="display:none;">
+      Suffix string: <input type="text" name="suffix" value="">
+    </div>
+  </div>
+  <div class="btn2">
+       <input id="btnReplace" class="bts" type="button" value="Replace" /> <input class="bts" type="submit" value="Add images" id="prefix-suffix-lines-submit"> <input value="Copy" class="bts" type="button"  onclick="copyData()"> <button class="bts" onClick="window.location.reload();">Refresh</button>
+
+</div>
+<br />
+<div class="first"><h1>Original File:</h1><br />
+	<textarea id="original" rows="4" cols="20" placeholder="Original Style/CSS file"></textarea>
+</p>
+
+
+
+<p>
+	<h1>Items to find:</h1><br />
+<textarea id="find" rows="4" cols="50" placeholder="../images/video_hyper_stable_small_2x.png"></textarea>
+</p>
+
+<p>
+	<h1>Items to replace:</h1>
+<textarea id="replace" rows="4" cols="50" placeholder="https://vodafonenz-brightspot-lower.s3.amazonaws.com/22/80/b59939814eb7afc960ad60ed1cfe/icon-sos-large-2x.png"></textarea>
+</p>
+</div>
+<div class="second">
+<p class="config">
+	<b>Configuration:</b><br><br />
+	- Items separated by <input id="separatedBy" type="text" value="\n" size="3" /> (Regex)<br />
+	- <input id="useRegex" type="checkbox"/> Use Regex in each item<br>
+	- <input id="caseSensitive" type="checkbox" checked/> Use case sensitive
+</p>
+</div>
+<div class="third">
+<p>
+<input type="button" class="bts" value="Replace" onclick="replace()" />
+</p>
+
+<p>
+	<h1>Updated CSS:</h1>
+	<textarea id="result"  rows="4" cols="50" placeholder="modified CSS file"></textarea>
+</p></div>
+
+<script>
+$(function(){mkTool("prefix-suffix-lines",function(f){f=f.replace(/\r\n/g,"\n");for(var n=f.split("\n"),r="",e=$('#prefix-suffix-lines-field input[name="prefix"]').val(),l=$('#prefix-suffix-lines-field input[name="suffix"]').val(),i=0;i<n.length;i++){var a=n[i];r+=e+a+l+"\n"}return r})});
+</script>
+<script>
+$(function () {
+    setTimeout(function () {
+        var script  = document.createElement('script');
+        script.type = "text/javascript";
+        script.src  = "https://js.stripe.com/v2/";
+
+        script.addEventListener("load", function () {
+            Stripe.setPublishableKey(stripeKey);
+        });
+
+        document.body.appendChild(script);
+    }, 1000);
+});
+
+</script>
+<script>
+var undoStack = [];
+
+function mkUndo (toolName) {
+    var undoSelector = '#' + toolName + '-submit-undo';
+    var textSelector = '#' + toolName + '-text';
+
+    $(undoSelector).click(function (ev) {
+        ev.preventDefault();
+
+        var last = undoStack.pop();
+        $(textSelector).val(last);
+
+        if (undoStack.length == 0) {
+            $(undoSelector).hide();
+        }
+    });
+}
+
+function mkTool (toolName, computeFn, opts) {
+    opts = opts || {};
+
+    var submitSelector = '#' + toolName + '-submit';
+    var undoSelector = '#' + toolName + '-submit-undo';
+    var textSelector = '#' + toolName + '-text';
+
+    $(submitSelector).click(function () {
+        var text = $(textSelector).val();
+        if (!opts.allowEmptyText) {
+            if (!text.length) return;
+        }
+
+        $('#action-error').hide();
+
+        try {
+            if (opts.asyncResultFn) {
+                computeFn(text, opts.asyncResultFn);
+            }
+            else {
+                var result = computeFn(text, opts.asyncResultFn);
+                $(textSelector).val(result);
+            }
+        }
+        catch (err) {
+            if (opts.exceptionFn) opts.exceptionFn(err);
+            return;
+        }
+
+        undoStack.push(text);
+
+        $(undoSelector).show();
+    });
+
+    mkUndo(toolName);
+}
+
+function mkImageConvertTool (toolName, inputOpts, outputOpts, computeFn) {
+    if ($('#tool-' + toolName).length == 0) return;
+
+    var fileSelector = '#file-select';
+    var submitSelector = '#submit';
+    var selectedFile;
+
+    // make file selector work
+    $(fileSelector).on('change', function (ev) {
+        $('#action-error').hide();
+        var file = ev.target.files[0];
+        if (file.type != inputOpts.inputMime) {
+            $('#action-error').show();
+            $('#action-error').text("Selected file is not a " + inputOpts.inputHumanFormat);
+            return;
+        }
+        selectedFile = file;
+        $(submitSelector).attr('disabled', false);
+    });
+
+    // make drag & drop work
+    $('#drag-and-drop').on('dragover', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('#drag-and-drop').addClass('hover');
+    });
+    $('#drag-and-drop').on('dragenter', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('#drag-and-drop').addClass('hover');
+    });
+    $('#drag-and-drop').on('dragleave', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('#drag-and-drop').removeClass('hover');
+    });
+    $('#drag-and-drop').on('dragend', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('#drag-and-drop').removeClass('hover');
+    });
+    $('#drag-and-drop').on('drop', function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('#drag-and-drop').removeClass('hover');
+        $('#action-error').hide();
+        ev.dataTransfer = ev.originalEvent.dataTransfer;
+        var file = ev.dataTransfer.files[0];
+        if (file.type != inputOpts.inputMime) {
+            $('#action-error').show();
+            $('#action-error').text("Selected file is not a " + inputOpts.inputHumanFormat);
+            return;
+        }
+        $('#drag-and-drop-selected').text("Selected " + file.name);
+        selectedFile = file;
+        $(submitSelector).attr('disabled', false);
+    });
+
+    // make convert button work
+    //
+    $(submitSelector).click(function () {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var img = new Image;
+            img.onload = function () {
+                var canvas = $('<canvas>')[0];
+                canvas.width = img.width;
+                canvas.height = img.height;
+                var canvasCtx = canvas.getContext('2d');
+                canvasCtx.drawImage(img, 0, 0);
+                function blobHandler (blob) {
+                    var lastDot = selectedFile.name.lastIndexOf('.');
+                    if (lastDot != -1) {
+                        var outputFileName = selectedFile.name.substring(0, lastDot) + '.' + outputOpts.outputExt;
+                    }
+                    else {
+                        var outputFileName = selectedFile.name + '.' + optputOpts.outputExt;
+                    }
+                    saveAs(blob, outputFileName);
+                }
+                canvas.toBlob(blobHandler, outputOpts.outputMime);
+            }
+            img.src = reader.result;
+        }
+        reader.readAsDataURL(selectedFile);
+    });
+}
+
+        function copyToClipboard(text) {
+  var $temp = $(".editor");
+  $("body").append($temp);
+  $temp.val($(text).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+
+<script>
+var out$ = $('#prefix-suffix-lines-text');
+
+// Plug in the Replace button
+$('#btnReplace').unbind('click').click(function(e) {
+    var txtWhat$ = $('#txtReplaceWhat');
+    var txtWith$ = $('#txtReplaceWith');
+    var txtReplace$ = $('#txtReplaceText');
+
+    var r = new RegExp(txtWhat$.val(), "g");
+
+    // Delimit for HTML out
+    var output = txtReplace$.val().replace(r, txtWith$.val()).replace(/\</g, "&lt;").replace(/\>/g, "&gt;").replace(/\&/g, "&amp;");
+
+    // Always needs to be the last thing
+    output = output.replace(/\n/g,"\$&");
+    out$.html(output);
+});
+
+// Plug in the Clear button
+$('#btnClear').unbind('click').click(function(e) {
+    if (confirm('Clear ALL fields?')) {
+        $('.replace, textarea').val('');
+        out$.html('');
+        $('#txtReplaceWhat').trigger('focus');
+    }
+});
+
+// Plug in the Cycle button
+$('#btnCycle').unbind('click').click(function(e) {
+    var msg = "Copy the Output and place it into the Input field?";
+    if (confirm(msg)) {
+        var fullOut = out$.html().replace(g);
+        $('#txtReplaceText').val(fullOut);
+    }
+});
+
+
+
+</script>
