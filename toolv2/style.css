@@ -20,18 +20,15 @@ textarea,input[type='text']{
 textarea{
 	border-radius: 5px;
 		border: 2px solid #000;
-	width: 500px;
+	width: 400px;
 	padding:1em;
 }
 
-textarea:hover{
-	border-radius: 5px;
-		border: 2px solid #FFC0CB.;
-	width: 500px;
-	padding:1em;
-}
+
 .field2 {
-	width:500px; float:right;
+	width:550px; float:right;
+	padding:5px;
+	border: 2px solid #2AAA8A;
 }
 
 . input2 {
@@ -137,19 +134,26 @@ td {
 .with-padding {
 	width: 1200px;
 	height:auto;
+	    
 }
 
 .btn2 {
 	width:1200px;
 	margin-left:500px;
+	height:auto;margin-top:21px;
 }
 
 .first {
 display:flex;
-padding:10px}
+padding:10px;
+border: 2px solid #FF0090;
+margin:21px;}
 
 .second {
-margin-left:400px;}
+	width:600px;margin:21px;
+margin-left:400px;padding:10px;border:  2px solid #00FFFF;}
 .third{
 	margin-left:400px;
-	display:flex;}
+	display:flex;
+	padding:10px;
+border: 2px solid #2AAA8A;}
