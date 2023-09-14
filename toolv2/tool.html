@@ -2,6 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="script.js"></script>
 <script src="script-copy.js"></script>
+<script src="script-copy2.js" defer></script>
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -21,7 +22,7 @@
     <br style="clear:both" />
 </div>
 <div class="with-padding">
-<div style="width:600px; float:left;">
+<div style="width:600px; float:left; padding:5px;border: 2px solid #FF0090;">
     <h1>Input Text:</h1><br />    
     <textarea id="txtReplaceText" class="replace" rows="1" ></textarea>
 
@@ -77,13 +78,13 @@
 </div>
 <div class="third">
 <p>
-<input type="button" class="bts" value="Replace" onclick="replace()" />
+<input type="button" style=" background-color: #00A36C;"class="bts" value="Result" onclick="replace()" />
 </p>
 
 <p>
 	<h1>Updated CSS:</h1>
 	<textarea id="result"  rows="4" cols="50" placeholder="modified CSS file"></textarea>
-</p></div>
+</p><input value="Copy" class="bts" style=" background-color: #00A36C;"type="button"  onclick="copyResult()"></div>
 
 <script>
 $(function(){mkTool("prefix-suffix-lines",function(f){f=f.replace(/\r\n/g,"\n");for(var n=f.split("\n"),r="",e=$('#prefix-suffix-lines-field input[name="prefix"]').val(),l=$('#prefix-suffix-lines-field input[name="suffix"]').val(),i=0;i<n.length;i++){var a=n[i];r+=e+a+l+"\n"}return r})});
@@ -297,4 +298,3 @@ $('#btnCycle').unbind('click').click(function(e) {
 
 
 </script>
-
